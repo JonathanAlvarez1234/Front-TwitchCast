@@ -25,7 +25,7 @@ export const Input = ({
             </div>
             <div>
                 {textArea ? (
-                    <textArea
+                    <textarea
                         type={type}
                         value={value}
                         onchange={handleValueChange}

@@ -1,1 +1,1 @@
-export { Auth } from "./auth.jsx"
+export { Auth } from "./Auth.jsx"

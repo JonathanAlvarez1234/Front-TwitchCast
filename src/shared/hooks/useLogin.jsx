@@ -17,7 +17,7 @@ export const useLogin = () => {
             email,
             password
         })
-
+        console.log(response)
         setIsLoading(false)
 
         if(response.error){
