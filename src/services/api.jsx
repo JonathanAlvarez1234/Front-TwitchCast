@@ -1,5 +1,5 @@
-import axios from "axios"
-import { logout } from "../shared/hooks";
+import axios from "axios";
+import { logout } from "../shared/hooks"
 
 const apiClient = axios.create({
     baseURL: "http://127.0.0.1:8080/twitch/v1",
@@ -25,7 +25,7 @@ apiClient.interceptors.request.use(
 export const login = async (data) => {
     try {
         return await apiClient.post('/auth/login', data);
-    } catch (e) {
+    }catch (e) {
         return {
             error: true,
             e
@@ -37,20 +37,51 @@ export const register = async (data) => {
     try {
         return await apiClient.post('/auth/register', data);
     } catch (e) {
-        console.log(e)
         return {
             error: true,
             e
         }
-        
     }
 }
 
 export const getChannels = async () => {
     try {
         return await apiClient.get('/channels')
+    } catch (error) {
+        return {
+            error: true,
+            e
+        }
+    }
+}
+
+export const getChannelSettings = async () => {
+    try {
+        return await apiClient.get('/settings/channel')
     } catch (e) {
-        return{
+        return {
+            error: true,
+            e
+        }
+    }
+}
+
+export const changePassword = async (data) => {
+    try {
+        return await apiClient.patch('/settings/password', data)
+    } catch (e) {
+        return {
+            error: true,
+            e
+        }
+    }
+}
+
+export const updateChannelSettings = async (data) => {
+    try {
+        return await apiClient.put('/settings/channel', data);
+    } catch (e) {
+        return {
             error: true,
             e
         }
@@ -61,11 +92,11 @@ export const getFollowedChannels = async () => {
     try {
         return await apiClient.get('/channels/followed')
     } catch (e) {
-            checkResponseStatus(e)
-            return{
-                error: true,
-                e
-            }
+        checkResponseStatus(e)
+        return{
+            error: true,
+            e
+        }
     }
 }
 
