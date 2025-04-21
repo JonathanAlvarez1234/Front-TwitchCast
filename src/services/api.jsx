@@ -60,7 +60,7 @@ export const getChannels = async () => {
 export const getFollowedChannels = async () => {
     try {
         return await apiClient.get('/channels/followed')
-    } catch (error) {
+    } catch (e) {
             checkResponseStatus(e)
             return{
                 error: true,

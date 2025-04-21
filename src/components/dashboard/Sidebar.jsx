@@ -1,4 +1,4 @@
-export const Sidebar = () => {
+export const Sidebar = ({channels}) => {
     if(!channels){
         return null
     }
