@@ -38,7 +38,7 @@ const inputs = [
     }
 ]
 
-export const ChannelSettings = ({ settings, saveSetting }) => {
+export const ChannelSettings = ({ settings, saveSettings }) => {
     const [  formState, setFormState] = useState({
         username: {
             isValid: validateUsername(settings.username),
