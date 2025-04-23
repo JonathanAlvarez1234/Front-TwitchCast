@@ -82,10 +82,10 @@ export const ChannelSettings = ({ settings, saveSettings }) => {
                 break;
             case 'title':
                 isValid = validateTitle(value)
-                    break;
+                break;
             case 'avatarUrl':
                 isValid = validationAvatarUrl(value)
-            break;
+                break;
             case 'description':
                 isValid = validateDescription(value)
                 break;
